@@ -1,0 +1,156 @@
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: roboto, sans-serif;
+  width: 100%;
+  margin: 0 auto;
+  overflow: unset;
+}
+
+.logo {
+  font-size: 3.5vmax !important;
+  color: #657786 !important;
+}
+
+.tweet-responsive {
+    width: 40px;
+    border-radius: 300px;
+    cursor: pointer;
+}
+
+.nav-item-box {
+  border-radius: 100px;
+  padding: 3px 10px;
+}
+
+.nav-item-box:hover {
+  background-color: #e8f5fe;
+}
+
+.nav-item-box:hover > a,
+.active {
+  color: #1da1fc !important;
+}
+
+.nav-item-box-logo {
+  border-radius: 60px;
+}
+
+.nav-item-box-logo:hover {
+  background-color: #e8f5fe;
+}
+
+.nav-link {
+  font-weight: 900;
+  color: black;
+}
+
+.homebar {
+  background-color: #ffffff;
+  font-weight: 900;
+}
+
+.tweet-input {
+  border: 0;
+  padding-left: 0 !important;
+}
+
+.tweet-input:focus {
+  box-shadow: none;
+}
+
+.icon {
+  color: #1da1fc;
+  padding: 0.3em;
+  font-size: 1.4em;
+  cursor: pointer;
+}
+
+.icon-black {
+  color: black;
+}
+
+.tweet-btn-row {
+  border-color: #e6ecf0;
+  border-width: 0.8em !important;
+}
+
+.tweet-btn {
+    opacity: .5;
+}
+
+.active-btn {
+    opacity: 1;
+}
+
+.custom-btn {
+  background-color: #1da1fc !important;
+  border: none !important;
+  border-radius: 100px !important;
+  font-weight: bold !important;
+    padding: 10px 18px;
+}
+
+.tweet-popup a, .tweet-popup a:hover {
+  color: #ffffff;
+}
+
+.custom-btn-transparent {
+    border: 1px solid #1da1fc !important;
+    border-radius: 100px !important;
+    font-weight: bold !important;
+    color: #1da1fc;
+    padding: 1px 14px;
+  }
+
+.custom-btn:hover {
+  color: #ffffff;
+  background-color: #1a90da !important;
+}
+
+.custom-btn-transparent:hover {
+    color: #1a90da;
+  }
+
+.search {
+  border-radius: 100px;
+  background-color: #e6ecf0;
+}
+
+.bold {
+  font-weight: 900;
+}
+
+.bold-light {
+  font-weight: 700;
+  font-size: .95em;
+}
+
+.list-header {
+  font-size: 1.15em;
+}
+
+.list-group,
+.list-group-item {
+  background-color: #f5f8fa;
+  border: none;
+}
+
+.list-group-item {
+  border-bottom: 0.5px solid #e6ecf0;
+}
+
+.sm-header {
+  font-size: .8em;
+  color: #657786;
+}
+
+.profile-pic img {
+    width: 50px;
+    border-radius: 300px;
+}

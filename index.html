@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://kit.fontawesome.com/d90900f2ce.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Twitter Clone</title>
+  </head>
+  <body>
+    <div class="modal fade popup" id="myModal" tabindex="-1" role="dialog">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="row">
+            <div class="col-12">
+              <i class="fas fa-times icon close" data-dismiss="modal"></i>
+            </div>
+          </div>
+          <div class="modal-body">
+            <div class="tweet text-left p-3">
+              <div class="row">
+                <div class="avatar col-2">
+                  <i class="fas fa-user-circle icon-black logo"></i>
+                </div>
+                <div class="input-group-lg mb-3 col-10">
+                  <textarea
+                    type="text"
+                    class="form-control tweet-input border-0"
+                    placeholder="What's happening?"
+                  ></textarea>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tweet-buttons">
+            <div class="row py-2 px-2">
+              <div class="col-6 text-left">
+                <i class="far fa-image icon"></i>
+                <i class="far fa-file-code icon"></i>
+                <i class="fas fa-poll-h icon"></i>
+                <i class="far fa-smile icon"></i>
+              </div>
+              <div class="col-6 text-right">
+                <button
+                  type="button"
+                  class="btn custom-btn btn-primary tweet-btn"
+                  id="tweet-btn-popup"
+                >
+                  Tweet
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="row container-row mx-xl-5 mx-1">
+        <ul
+          class="nav col-2 flex-column vh-100 sticky-top text-right text-xl-left"
+        >
+          <li class="nav-item py-1">
+            <div class="nav-item-box d-inline-flex">
+              <i class="fab fa-twitter icon icon-lg"></i>
+              <a class="nav-link active d-none d-xl-block" href="#"></a>
+            </div>
+          </li>
+          <li class="nav-item py-1">
+            <div class="nav-item-box d-inline-flex">
+              <i class="fas fa-home icon icon-active"></i>
+              <a class="nav-link active d-none d-xl-block" href="#">Home</a>
+            </div>
+          </li>
+          <li class="nav-item py-1">
+            <div class="nav-item-box d-inline-flex">
+              <i class="fas fa-hashtag icon icon-black"></i>
+              <a class="nav-link d-none d-xl-block" href="#">Explore</a>
+            </div>
+          </li>
+          <li class="nav-item py-1">
+            <div class="nav-item-box d-inline-flex">
+              <i class="far fa-bell icon icon-black"></i>
+              <a class="nav-link d-none d-xl-block" href="#">Notifications</a>
+            </div>
+          </li>
+          <li class="nav-item py-1">
+            <div class="nav-item-box d-inline-flex">
+              <i class="far fa-envelope icon icon-black"></i>
+              <a class="nav-link d-none d-xl-block" href="#">Messages</a>
+            </div>
+          </li>
+          <li class="nav-item py-1">
+            <div class="nav-item-box d-inline-flex">
+              <i class="far fa-bookmark icon icon-black"></i>
+              <a class="nav-link d-none d-xl-block" href="#">Bookmarks</a>
+            </div>
+          </li>
+          <li class="nav-item py-1">
+            <div class="nav-item-box d-inline-flex">
+              <i class="far fa-list-alt icon icon-black"></i>
+              <a class="nav-link d-none d-xl-block" href="#">Lists</a>
+            </div>
+          </li>
+          <li class="nav-item py-1">
+            <div class="nav-item-box d-inline-flex">
+              <i class="fas fa-user-circle icon icon-black"></i>
+              <a class="nav-link d-none d-xl-block" href="#">Profile</a>
+            </div>
+          </li>
+          <li class="nav-item py-1">
+            <div class="nav-item-box d-inline-flex">
+              <i class="far fa-comment-dots icon icon-black"></i>
+              <a class="nav-link d-none d-xl-block" href="#">More</a>
+            </div>
+          </li>
+          <li class="nav-item-btn py-1 d-none d-xl-block tweet-popup">
+            <a
+              data-toggle="modal"
+              data-target="#myModal"
+              class="custom-btn btn w-75"
+              >Tweet</a
+            >
+            <script
+              async
+              src="https://platform.twitter.com/widgets.js"
+              charset="utf-8"
+            ></script>
+          </li>
+          <li class="nav-item d-xl-none">
+            <div class="nav-item-box d-inline-flex">
+              <img
+                src="./img/twitter-button1.png"
+                data-toggle="modal"
+                data-target="#myModal"
+                class="tweet-responsive"
+                alt=""
+              />
+            </div>
+          </li>
+        </ul>
+
+        <div class="col-xl-6 col-md-8 col-10 mr-md-0 vh-500 content">
+          <div class="homebar col-12 sticky-top">
+            <div class="row">
+              <div class="col-10 p-3 text-left border-bottom border-left">
+                Home
+              </div>
+              <div class="col-2 p-2 border-bottom border-right">
+                <i class="fas fa-magic icon"></i>
+              </div>
+            </div>
+          </div>
+
+          <div class="tweet text-left p-3 border-right border-left">
+            <div class="row">
+              <div class="avatar col-2">
+                <i class="fas fa-user-circle icon-black logo"></i>
+              </div>
+              <div class="input-group-lg mb-3 col-10">
+                <input
+                  type="text"
+                  class="form-control tweet-input"
+                  placeholder="What's happening?"
+                />
+              </div>
+            </div>
+            <div class="tweet-buttons">
+              <div class="row tweet-btn-row border-bottom py-3">
+                <div class="col-12 col-sm-6 text-left offset-2">
+                  <i class="far fa-image icon"></i>
+                  <i class="far fa-file-code icon d-none d-lg-inline-block"></i>
+                  <i class="fas fa-poll-h icon"></i>
+                  <i class="far fa-smile icon"></i>
+                </div>
+                <div
+                  class="col-12 col-sm-4 offset-2 offset-sm-0 text-left text-sm-right pr-5 pr-sm-2"
+                >
+                  <button
+                    type="button"
+                    class="btn custom-btn btn-primary tweet-btn"
+                    id="tweetBtn"
+                  >
+                    Tweet
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="timeline border-right border-left">
+            <a
+              class="twitter-timeline"
+              href="https://twitter.com/yleuutiset?ref_src=twsrc%5Etfw"
+              >Tweets by yleuutiset</a
+            >
+            <script
+              async
+              src="https://platform.twitter.com/widgets.js"
+              charset="utf-8"
+            ></script>
+          </div>
+        </div>
+        <div class="col-4 sticky-top vh-100 sidebar d-none d-lg-block">
+          <input
+            type="text"
+            class="form-control search my-2"
+            placeholder="Search Twitter"
+          />
+          <div class="card">
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item bold py-2 list-header">
+                Trends for you
+              </li>
+              <li class="list-group-item">
+                <div class="sm-header">Trending in Finland</div>
+                <div class="bold-light">#maskedsingersuomi</div>
+              </li>
+              <li class="list-group-item">
+                <div class="sm-header">Trending in Finland</div>
+                <div class="bold-light">Finland</div>
+              </li>
+              <li class="list-group-item">
+                <div class="sm-header">Trending in Finland</div>
+                <div class="bold-light">Mulle</div>
+              </li>
+              <li class="list-group-item">
+                <div class="sm-header">Trending in Finland</div>
+                <div class="bold-light">#olenlukija</div>
+              </li>
+              <li class="list-group-item">
+                <div class="sm-header">Trending in Finland</div>
+                <div class="bold-light">#nhlfi</div>
+              </li>
+            </ul>
+          </div>
+          <div class="card my-2 d-none d-lg-block">
+            <ul class="list-group">
+              <li class="list-group-item bold py-2 list-header">
+                Who to follow
+              </li>
+              <li
+                class="list-group-item d-flex flex-column align-items-stretch justify-content-between"
+              >
+                <div class="row align-items-center">
+                  <div class="profile-pic px-xl-2">
+                    <img src="./img/sk.png" alt="" />
+                  </div>
+                  <div class="mr-auto">
+                    <div class="bold-light">Suomen Kuvalehti</div>
+                    <div class="sm-header">@Suomenkuvalehti</div>
+                  </div>
+                  <div class="pr-xl-4 pr-lg-1">
+                    <a
+                      href="https://twitter.com/suomenkuvalehti?ref_src=twsrc%5Etfw"
+                      target="_blank"
+                      class="btn custom-btn-transparent"
+                      data-show-count="false"
+                      >Follow</a
+                    >
+                    <script
+                      async
+                      src="https://platform.twitter.com/widgets.js"
+                      charset="utf-8"
+                    ></script>
+                  </div>
+                </div>
+              </li>
+              <li
+                class="list-group-item d-flex flex-column align-items-stretch justify-content-between"
+              >
+                <div class="row rivi align-items-center">
+                  <div class="kuva profile-pic px-xl-2">
+                    <img src="./img/hs.png" alt="" />
+                  </div>
+                  <div class="mr-auto">
+                    <div class="bold-light">Helsingin Sanomat</div>
+                    <div class="sm-header">@hsfi</div>
+                  </div>
+                  <div class="pr-xl-4 pr-lg-1">
+                    <a
+                      href="https://twitter.com/suomenkuvalehti?ref_src=twsrc%5Etfw"
+                      target="_blank"
+                      class="btn custom-btn-transparent"
+                      data-show-count="false"
+                      >Follow</a
+                    >
+                    <script
+                      async
+                      src="https://platform.twitter.com/widgets.js"
+                      charset="utf-8"
+                    ></script>
+                  </div>
+                </div>
+              </li>
+              <li
+                class="list-group-item d-flex flex-column align-items-stretch justify-content-between"
+              >
+                <div class="row rivi align-items-center">
+                  <div class="kuva profile-pic px-xl-2">
+                    <img src="./img/js.jpeg" alt="" />
+                  </div>
+                  <div class="mr-auto">
+                    <div class="bold-light">Jari Sarasvuo</div>
+                    <div class="sm-header">@SarasvuoJari</div>
+                  </div>
+                  <div class="pr-xl-4 pr-lg-1">
+                    <a
+                      href="https://twitter.com/suomenkuvalehti?ref_src=twsrc%5Etfw"
+                      target="_blank"
+                      class="btn custom-btn-transparent"
+                      data-show-count="false"
+                      >Follow</a
+                    >
+                    <script
+                      async
+                      src="https://platform.twitter.com/widgets.js"
+                      charset="utf-8"
+                    ></script>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>
